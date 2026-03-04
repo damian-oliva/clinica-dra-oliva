@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Turno confirmado! — Dra. Oliva Mariana</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --purple:#7c3aed; --pale:#f5f3ff; }
+  * { margin:0;padding:0;box-sizing:border-box; }
+  body { font-family:"Nunito",sans-serif; background:var(--pale); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:2rem; }
+  .card { background:white; border-radius:24px; padding:3rem; max-width:480px; width:100%; text-align:center; box-shadow:0 20px 60px rgba(124,58,237,0.15); border:2px solid #ede9fe; }
+  .icon { font-size:4rem; margin-bottom:1rem; animation:bounce 0.6s ease; }
+  @keyframes bounce { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+  h1 { font-family:"Syne",sans-serif; color:var(--purple); font-size:1.8rem; margin-bottom:0.8rem; }
+  p { color:#6b7280; line-height:1.7; margin-bottom:1rem; }
+  .steps { background:var(--pale); border-radius:14px; padding:1.5rem; margin:1.5rem 0; text-align:left; }
+  .steps h3 { font-family:"Syne",sans-serif; font-size:1rem; color:#1e1040; margin-bottom:1rem; }
+  .step { display:flex; gap:10px; margin-bottom:0.8rem; font-size:0.9rem; color:#374151; }
+  .step-n { background:var(--purple); color:white; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.8rem; flex-shrink:0; }
+  .wtp-btn { display:block; background:#25d366; color:white; padding:14px; border-radius:12px; text-decoration:none; font-weight:800; font-size:1rem; margin-bottom:0.8rem; transition:background 0.2s; }
+  .wtp-btn:hover { background:#1da851; }
+  .home-btn { display:block; color:var(--purple); text-decoration:none; font-weight:700; font-size:0.9rem; padding:10px; }
+  .home-btn:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">🎉</div>
+  <h1>¡Pago recibido!</h1>
+  <p>Tu seña de <strong>$3.000</strong> fue acreditada. Ya falta poco para confirmar tu turno.</p>
+  <div class="steps">
+    <h3>📋 Próximos pasos:</h3>
+    <div class="step"><div class="step-n">1</div><div>Sacá una captura del comprobante de Mercado Pago.</div></div>
+    <div class="step"><div class="step-n">2</div><div>Enviásela a la Dra. Oliva por WhatsApp haciendo clic abajo.</div></div>
+    <div class="step"><div class="step-n">3</div><div>Recibirás confirmación y recordatorio antes del turno.</div></div>
+  </div>
+  <a href="https://wa.me/5492214119307?text=Hola%20Dra.%20Oliva!%20Acabo%20de%20pagar%20la%20se%C3%B1a%20del%20turno.%20Te%20mando%20el%20comprobante%20👇" 
+     class="wtp-btn" target="_blank">
+    📲 Enviar comprobante por WhatsApp
+  </a>
+  <a href="/" class="home-btn">← Volver al inicio</a>
+</div>
+</body>
+</html>

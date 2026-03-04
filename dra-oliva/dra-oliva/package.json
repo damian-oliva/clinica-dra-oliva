@@ -1,0 +1,10 @@
+{
+  "name": "clinica-dra-oliva",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "mercadopago": "^2.0.15",
+    "googleapis": "^140.0.0"
+  },
+  "engines": { "node": ">=18" }
+}

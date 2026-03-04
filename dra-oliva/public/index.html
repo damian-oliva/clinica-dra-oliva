@@ -498,18 +498,65 @@ footer { background:var(--ink); color:rgba(255,255,255,0.45); padding:60px 7% 30
   </div>
 
   <!-- DESPUÉS DE RESERVAR -->
-  <div style="margin-top:2rem;background:var(--lavanda-xpale);border-radius:14px;padding:1.8rem;border:1.5px solid var(--border);" class="fi">
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--dark);margin-bottom:0.6rem;font-weight:500;">¿Ya elegiste tu turno? 🎉</h3>
-    <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;margin-bottom:1.2rem;">Recibís una confirmación automática por email. Para terminar de asegurar tu lugar, enviá el comprobante de pago al WhatsApp de la Dra. Oliva.</p>
-    <a href="https://wa.me/5492214119307?text=Hola%20Dra.%20Oliva!%20Acabo%20de%20reservar%20un%20turno%20desde%20la%20web.%20Te%20mando%20el%20comprobante%20de%20pago%20%F0%9F%91%87" 
+  <div style="margin-top:2rem;background:var(--lavanda-xpale);border-radius:14px;padding:1.8rem;border:1.5px solid var(--border);text-align:center;" class="fi">
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--dark);margin-bottom:0.5rem;font-weight:500;">¿Ya elegiste tu turno?</h3>
+    <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;margin-bottom:1.3rem;">Hacé clic abajo para ver los datos de pago y confirmar tu reserva.</p>
+    <button onclick="abrirPopup()"
+       style="display:inline-flex;align-items:center;gap:9px;background:var(--lavanda);color:white;padding:13px 28px;border-radius:8px;border:none;font-family:'DM Sans',sans-serif;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s;"
+       onmouseover="this.style.background='var(--lavanda-mid)'" onmouseout="this.style.background='var(--lavanda)'">
+      ✅ Ya reservé mi turno — Pagar seña
+    </button>
+  </div>
+</section>
+
+<!-- POPUP PAGO -->
+<div id="pagoOverlay" style="display:none;position:fixed;inset:0;background:rgba(44,40,64,0.6);backdrop-filter:blur(6px);z-index:999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:20px;padding:2.5rem;max-width:440px;width:100%;text-align:center;animation:popIn 0.28s ease;border:1.5px solid var(--border);position:relative;">
+    
+    <button onclick="cerrarPopup()" style="position:absolute;top:1rem;right:1.2rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--gray);">×</button>
+    
+    <div style="font-size:2.5rem;margin-bottom:0.8rem;">🎉</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--dark);margin-bottom:0.4rem;font-weight:500;">¡Turno reservado!</h2>
+    <p style="color:var(--gray);font-size:0.88rem;line-height:1.6;margin-bottom:1.4rem;">Para confirmar tu lugar abonás una seña de <strong style="color:var(--dark)">$5.000</strong> por Mercado Pago.</p>
+
+    <!-- DATOS DE PAGO -->
+    <div style="background:var(--lavanda-xpale);border-radius:12px;padding:1.3rem;margin-bottom:1.3rem;border:1.5px solid var(--border);text-align:left;">
+      <p style="font-size:0.72rem;font-weight:600;color:var(--lavanda);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem;">Datos de pago</p>
+      
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+        <span style="font-size:0.85rem;color:var(--gray);">Alias MP</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <strong id="aliasText" style="font-size:1rem;color:var(--dark);letter-spacing:0.05em;">verdemorado</strong>
+          <button onclick="copiarAlias()" style="background:var(--lavanda-pale);border:1px solid var(--border);color:var(--lavanda);padding:3px 10px;border-radius:5px;font-size:0.75rem;font-weight:600;cursor:pointer;" id="copyBtn">Copiar</button>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+        <span style="font-size:0.85rem;color:var(--gray);">Monto</span>
+        <strong style="font-size:1rem;color:var(--dark);">$5.000</strong>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:0.85rem;color:var(--gray);">A nombre de</span>
+        <strong style="font-size:0.9rem;color:var(--dark);">Dra. Oliva Mariana</strong>
+      </div>
+    </div>
+
+    <p style="font-size:0.82rem;color:var(--gray);margin-bottom:1.2rem;">Una vez realizada la transferencia, enviá el comprobante por WhatsApp para activar tu turno.</p>
+
+    <a href="https://wa.me/5492214119307?text=Hola%20Dra.%20Oliva!%20Acabo%20de%20reservar%20un%20turno%20desde%20la%20web%20y%20ya%20realic%C3%A9%20la%20se%C3%B1a%20de%20%245.000.%20Te%20mando%20el%20comprobante%20%F0%9F%91%87"
        target="_blank"
-       style="display:inline-flex;align-items:center;gap:9px;background:#25d366;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:background 0.2s;"
+       style="display:flex;align-items:center;justify-content:center;gap:9px;background:#25d366;color:white;padding:13px;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.95rem;margin-bottom:0.7rem;transition:background 0.2s;"
        onmouseover="this.style.background='#1da851'" onmouseout="this.style.background='#25d366'">
       📲 Enviar comprobante por WhatsApp
     </a>
-  </div>
 
-</section>
+    <button onclick="cerrarPopup()" style="width:100%;background:transparent;border:1.5px solid var(--border);color:var(--gray);padding:11px;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.88rem;cursor:pointer;">
+      Cerrar
+    </button>
+
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -552,6 +599,35 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
 }, { threshold: 0.08 });
 document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+// Popup pago
+function abrirPopup() {
+  const overlay = document.getElementById('pagoOverlay');
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function cerrarPopup() {
+  const overlay = document.getElementById('pagoOverlay');
+  overlay.style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.getElementById('pagoOverlay').addEventListener('click', function(e) {
+  if (e.target === this) cerrarPopup();
+});
+
+function copiarAlias() {
+  navigator.clipboard.writeText('verdemorado').then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '¡Copiado!';
+    btn.style.background = '#e8f5e9';
+    btn.style.color = '#2d6a4f';
+    setTimeout(() => {
+      btn.textContent = 'Copiar';
+      btn.style.background = 'var(--lavanda-pale)';
+      btn.style.color = 'var(--lavanda)';
+    }, 2000);
+  });
+}
 </script>
 </body>
 </html>

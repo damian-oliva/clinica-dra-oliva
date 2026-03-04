@@ -469,74 +469,46 @@ footer { background:var(--ink); color:rgba(255,255,255,0.45); padding:60px 7% 30
 <!-- TURNOS -->
 <section id="turnos">
   <div class="fi">
-    <div class="sec-tag">Reservas</div>
+    <div class="sec-label">Reservas</div>
     <h2 class="sec-title">Pedí tu turno online</h2>
-    <p class="sec-sub">Elegí el día y el horario. Pagás $3.000 de seña por Mercado Pago para confirmar. El resto lo abonás en el consultorio.</p>
+    <p class="sec-sub">Elegí el día y horario directamente en el calendario. Después enviá el comprobante de pago por WhatsApp para confirmar.</p>
   </div>
-  <div class="turnos-grid">
-    <div>
-      <div class="steps">
-        <div class="step fi"><div class="step-n">1</div><div><strong>Completá el formulario</strong><p>Elegí fecha y horario. Contanos brevemente el motivo de tu consulta.</p></div></div>
-        <div class="step fi"><div class="step-n">2</div><div><strong>Pagá la seña por Mercado Pago</strong><p>$3.000 de reserva. Se descuenta del total cuando venís al consultorio.</p></div></div>
-        <div class="step fi"><div class="step-n">3</div><div><strong>Confirmación por email</strong><p>Te enviamos el evento a tu calendario con fecha, hora y dirección.</p></div></div>
-        <div class="step fi"><div class="step-n">4</div><div><strong>Enviá el comprobante por WhatsApp</strong><p>Mandá la captura del pago al WhatsApp de la Dra. para activar el turno.</p></div></div>
-      </div>
-      <div class="contact-box fi">
-        <h4>Contacto directo</h4>
-        <div class="contact-row">💬 <div><strong>+54 9 221 411-9307</strong> <span>WhatsApp</span></div></div>
-        <div class="contact-row">✉️ <div><strong>DraMarianaOliva@gmail.com</strong> <span>Email</span></div></div>
-        <div class="contact-row">📍 <div><strong>Somellera 5739, Mataderos CABA</strong> <span>Sábados 10 a 18 hs</span></div></div>
-      </div>
-    </div>
 
-    <div class="booking-form fi">
-      <h3>Reservar turno</h3>
-      <div class="form-row">
-        <div class="fg"><label>Nombre completo</label><input type="text" id="f-nombre" placeholder="Ej: Ana García"></div>
-        <div class="fg"><label>WhatsApp</label><input type="tel" id="f-tel" placeholder="+54 9 ..."></div>
-      </div>
-      <div class="fg"><label>Email</label><input type="email" id="f-email" placeholder="tu@email.com"></div>
-      <div class="fg">
-        <label>Especialidad</label>
-        <select id="f-especialidad">
-          <option value="">— Tipo de consulta —</option>
-          <option>Revisación / Limpieza General</option>
-          <option>Blanqueamiento Dental</option>
-          <option>Implantes Dentales</option>
-          <option>Periodoncia (encías)</option>
-          <option>Ortodoncia — Brackets o Alineadores</option>
-          <option>Carillas Dentales</option>
-          <option>Bruxismo / Placa de Descarga</option>
-          <option>Endodoncia (conductos)</option>
-          <option>Odontopediatría (niños)</option>
-          <option>Detección de Cáncer Bucal</option>
-          <option>Cirugía / Muela del Juicio</option>
-          <option>No sé / Tengo una consulta</option>
-        </select>
-      </div>
-      <div class="fg">
-        <label>Elegí un sábado</label>
-        <div class="cal-strip" id="calStrip"></div>
-      </div>
-      <div class="fg">
-        <label>Horario disponible</label>
-        <div class="time-grid" id="timeGrid"><p class="ts-empty">Seleccioná un día primero.</p></div>
-      </div>
-      <div class="fg">
-        <label>Motivo de la consulta</label>
-        <textarea id="f-motivo" placeholder="Contanos brevemente por qué venís. Ej: me duele una muela, quiero información sobre ortodoncia..."></textarea>
-      </div>
-      <div class="price-row">
-        <span>Seña de reserva (se descuenta del total)</span>
-        <strong>$3.000</strong>
-      </div>
-      <button class="mp-btn" onclick="openModal()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.894 8.22l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.94z"/></svg>
-        Confirmar y pagar con Mercado Pago
-      </button>
-      <div class="wtp-note">📲 Después de pagar, enviá el comprobante por WhatsApp al +54 9 221 411-9307</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0 2.5rem;">
+    <div class="spec-card fi">
+      <div class="spec-tag">Paso 1</div>
+      <h3 style="font-size:1rem;margin-bottom:0.4rem;">📅 Elegí tu turno</h3>
+      <p>Seleccioná el sábado y horario que más te convenga en el calendario de abajo.</p>
+    </div>
+    <div class="spec-card fi">
+      <div class="spec-tag">Paso 2</div>
+      <h3 style="font-size:1rem;margin-bottom:0.4rem;">📲 Confirmá por WhatsApp</h3>
+      <p>Una vez reservado, enviá el comprobante de pago al <strong>+54 9 221 411-9307</strong> para activar el turno.</p>
     </div>
   </div>
+
+  <!-- IFRAME GOOGLE CALENDAR -->
+  <div class="fi" style="border-radius:16px;overflow:hidden;border:1.5px solid var(--border);box-shadow:0 8px 32px rgba(139,125,184,0.1);">
+    <iframe 
+      src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2XnhCCcCgYFEXAnI-aBpopG9f2SnaDhS9dEMDjHB2dXkWKlNmrxI3lWaWWoePyGqJJLGLqsSD2?gv=true"
+      style="width:100%;height:680px;border:none;display:block;"
+      frameborder="0"
+      title="Reservar turno — Dra. Oliva Mariana"
+    ></iframe>
+  </div>
+
+  <!-- DESPUÉS DE RESERVAR -->
+  <div style="margin-top:2rem;background:var(--lavanda-xpale);border-radius:14px;padding:1.8rem;border:1.5px solid var(--border);" class="fi">
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--dark);margin-bottom:0.6rem;font-weight:500;">¿Ya elegiste tu turno? 🎉</h3>
+    <p style="color:var(--gray);font-size:0.9rem;line-height:1.7;margin-bottom:1.2rem;">Recibís una confirmación automática por email. Para terminar de asegurar tu lugar, enviá el comprobante de pago al WhatsApp de la Dra. Oliva.</p>
+    <a href="https://wa.me/5492214119307?text=Hola%20Dra.%20Oliva!%20Acabo%20de%20reservar%20un%20turno%20desde%20la%20web.%20Te%20mando%20el%20comprobante%20de%20pago%20%F0%9F%91%87" 
+       target="_blank"
+       style="display:inline-flex;align-items:center;gap:9px;background:#25d366;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:background 0.2s;"
+       onmouseover="this.style.background='#1da851'" onmouseout="this.style.background='#25d366'">
+      📲 Enviar comprobante por WhatsApp
+    </a>
+  </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -572,122 +544,14 @@ footer { background:var(--ink); color:rgba(255,255,255,0.45); padding:60px 7% 30
   </div>
 </footer>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <div class="modal-icon">✨</div>
-    <h2>Confirmá tu turno</h2>
-    <p>Revisá los datos y completá el pago para reservar.</p>
-    <div class="modal-detail" id="modalDetail"></div>
-    <p style="font-size:0.78rem;color:var(--mist);margin-bottom:1.2rem;font-weight:300;">Recibirás el evento en tu calendario y un recordatorio 24hs antes.</p>
-    <div class="modal-btns">
-      <button class="mp-btn" onclick="goMP()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.894 8.22l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.94z"/></svg>
-        Ir a Mercado Pago — Pagar $3.000
-      </button>
-      <button class="wtp-btn" onclick="sendWtp()">📲 Abrir WhatsApp y enviar comprobante</button>
-      <button class="close-btn" onclick="closeModal()">Cancelar</button>
-    </div>
-  </div>
-</div>
+<!-- MODAL no longer needed - using Google Calendar -->
 
 <script>
-const MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-const TAKEN = ['10:30','13:00','15:30'];
-let selDate = null, selTime = null;
-
-function generateSlots(start, end) {
-  const s = []; let [h,m] = start.split(':').map(Number);
-  const [eh,em] = end.split(':').map(Number);
-  while (h*60+m < eh*60+em) {
-    s.push(`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}`);
-    m+=30; if(m>=60){h++;m-=60;}
-  }
-  return s;
-}
-const SLOTS = generateSlots('10:00','18:00');
-
-// Build saturday calendar on load
-(function buildCal() {
-  const strip = document.getElementById('calStrip');
-  let d = new Date(); d.setDate(d.getDate()+1);
-  let count = 0;
-  while (count < 8) {
-    if (d.getDay() === 6) {
-      const copy = new Date(d);
-      const el = document.createElement('div');
-      el.className = 'cal-day';
-      el.innerHTML = `<div class="dn">Sáb</div><div class="dd">${d.getDate()}</div><div class="dm">${MONTHS[d.getMonth()]}</div>`;
-      el.onclick = () => {
-        document.querySelectorAll('.cal-day').forEach(x=>x.classList.remove('sel'));
-        el.classList.add('sel'); selDate = copy; renderSlots();
-      };
-      strip.appendChild(el); count++;
-    }
-    d.setDate(d.getDate()+1);
-  }
-})();
-
-function renderSlots() {
-  const grid = document.getElementById('timeGrid'); grid.innerHTML = ''; selTime = null;
-  SLOTS.forEach(s => {
-    const taken = TAKEN.includes(s);
-    const el = document.createElement('div');
-    el.className = 'ts' + (taken?' taken':'');
-    el.textContent = s;
-    if (!taken) el.onclick = () => { document.querySelectorAll('.ts:not(.taken)').forEach(x=>x.classList.remove('sel')); el.classList.add('sel'); selTime = s; };
-    grid.appendChild(el);
-  });
-}
-
-function openModal() {
-  const n=document.getElementById('f-nombre').value.trim();
-  const e=document.getElementById('f-email').value.trim();
-  const t=document.getElementById('f-tel').value.trim();
-  const esp=document.getElementById('f-especialidad').value;
-  const motivo=document.getElementById('f-motivo').value.trim();
-  if(!n||!e||!t||!esp||!selDate||!selTime){alert('Por favor completá todos los campos y elegí un día y horario.');return;}
-  const ds=selDate.toLocaleDateString('es-AR',{weekday:'long',day:'numeric',month:'long'});
-  document.getElementById('modalDetail').innerHTML=`
-    <p>👤 <strong>${n}</strong></p>
-    <p>📅 <strong>${ds} a las ${selTime} hs</strong></p>
-    <p>📍 <strong>Somellera 5739, Mataderos CABA</strong></p>
-    <p>🦷 <strong>${esp}</strong></p>
-    ${motivo?`<p>💬 <em>${motivo}</em></p>`:''}
-    <p>💳 <strong>Seña: $3.000</strong></p>`;
-  document.getElementById('modalOverlay').classList.add('open');
-}
-function closeModal(){document.getElementById('modalOverlay').classList.remove('open');}
-document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
-
-async function goMP() {
-  const n=document.getElementById('f-nombre').value.trim();
-  const e=document.getElementById('f-email').value.trim();
-  const t=document.getElementById('f-tel').value.trim();
-  const esp=document.getElementById('f-especialidad').value;
-  const motivo=document.getElementById('f-motivo').value.trim();
-  const ds=selDate?selDate.toLocaleDateString('es-AR',{weekday:'long',day:'numeric',month:'long'}):'';
-  const btn=document.querySelector('.modal-btns .mp-btn');
-  btn.disabled=true; btn.textContent='Generando link...';
-  try {
-    const res=await fetch('/api/crear-preferencia',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:n,email:e,telefono:t,consultorio:'Somellera 5739, Mataderos CABA',especialidad:esp,motivo:motivo,fecha:ds,hora:selTime})});
-    const data=await res.json();
-    if(data.init_point){window.location.href=data.init_point;}
-    else{alert('Error al generar el pago. Contactanos por WhatsApp.');}
-  } catch(err){alert('Error de conexión. Contactanos por WhatsApp.');}
-  finally{btn.disabled=false;btn.innerHTML='<svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm5.894 8.22l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.94z"/></svg> Ir a Mercado Pago — Pagar $3.000';}
-}
-
-function sendWtp(){
-  const n=document.getElementById('f-nombre').value.trim();
-  const esp=document.getElementById('f-especialidad').value;
-  const ds=selDate?selDate.toLocaleDateString('es-AR',{weekday:'long',day:'numeric',month:'long'}):'';
-  const msg=encodeURIComponent(`Hola Dra. Oliva! Soy *${n}*. Reservé un turno para el *${ds} a las ${selTime}hs* (${esp}). Te mando el comprobante de pago 👇`);
-  window.open(`https://wa.me/5492214119307?text=${msg}`,'_blank');
-}
-
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');});},{threshold:0.08});
-document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+// Fade in observer
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>

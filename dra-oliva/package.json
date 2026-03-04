@@ -1,0 +1,12 @@
+{
+  "name": "clinica-dra-oliva",
+  "version": "1.0.0",
+  "description": "Sitio web Clínica Dental Dra. Oliva Mariana",
+  "private": true,
+  "dependencies": {
+    "mercadopago": "^2.0.15"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
